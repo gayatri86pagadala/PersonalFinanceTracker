@@ -1,0 +1,103 @@
+
+.add-transaction-page {
+    min-height: 100vh;
+    background: #f4f6f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.add-transaction-card {
+    width: 100%;
+    max-width: 500px;
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.add-transaction-card h2 {
+    text-align: center;
+    color: #1976d2;
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+
+.add-transaction-card label {
+    display: block;
+    margin-bottom: 8px;
+    margin-top: 18px;
+    font-weight: bold;
+    color: #444;
+}
+
+.add-transaction-card input,
+.add-transaction-card select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    font-size: 15px;
+    transition: 0.3s;
+    box-sizing: border-box;
+}
+
+.add-transaction-card input:focus,
+.add-transaction-card select:focus {
+    border-color: #1976d2;
+    box-shadow: 0 0 5px rgba(25,118,210,.3);
+}
+
+.add-btn {
+    width: 100%;
+    margin-top: 30px;
+    padding: 14px;
+    background: #1976d2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.add-btn:hover {
+    background: #125ea7;
+    transform: translateY(-2px);
+}
+
+@media (max-width:768px){
+
+    .add-transaction-card{
+        padding:25px;
+    }
+
+    .add-transaction-card h2{
+        font-size:26px;
+    }
+
+}
+
+@media (max-width:480px){
+
+    .add-transaction-page{
+        padding:15px;
+    }
+
+    .add-transaction-card{
+        padding:20px;
+    }
+
+    .add-transaction-card h2{
+        font-size:22px;
+    }
+
+    .add-btn{
+        font-size:15px;
+        padding:12px;
+    }
+
+}

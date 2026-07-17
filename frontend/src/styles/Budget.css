@@ -1,0 +1,243 @@
+/* ===== Budget Page ===== */
+
+.budget-page {
+    max-width: 1000px;
+    margin: auto;
+    padding: 30px;
+    background: #f5f7fb;
+    min-height: 100vh;
+}
+
+.budget-page h1 {
+    text-align: center;
+    color: #1976d2;
+    margin-bottom: 30px;
+}
+
+/* ===== Budget Card ===== */
+
+.budget-card {
+
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 6px 18px rgba(0,0,0,.12);
+    text-align: center;
+    margin-bottom: 30px;
+
+}
+
+.budget-card h3{
+
+    margin-bottom:20px;
+    color:#555;
+
+}
+
+.budget-value{
+
+    font-size:42px;
+    color:#1976d2;
+    margin:0;
+
+}
+
+/* ===== Edit Row ===== */
+
+.budget-edit-row{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+
+}
+
+/* ===== Input Row ===== */
+
+.budget-input-row{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+
+}
+
+.budget-input-row input{
+
+    width:220px;
+    padding:12px;
+    border-radius:10px;
+    border:1px solid #ccc;
+    font-size:16px;
+
+}
+
+/* ===== Buttons ===== */
+
+.edit-btn,
+.save-btn,
+.cancel-btn{
+
+    border:none;
+    cursor:pointer;
+    transition:.3s;
+
+}
+
+.edit-btn{
+
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:#1976d2;
+    color:white;
+    font-size:18px;
+
+}
+
+.save-btn{
+
+    padding:12px 20px;
+    background:#4CAF50;
+    color:white;
+    border-radius:10px;
+    font-weight:bold;
+
+}
+
+.cancel-btn{
+
+    padding:12px 20px;
+    background:#F44336;
+    color:white;
+    border-radius:10px;
+    font-weight:bold;
+
+}
+
+.edit-btn:hover,
+.save-btn:hover,
+.cancel-btn:hover{
+
+    transform:translateY(-2px);
+    opacity:.9;
+
+}
+
+/* ===== Summary ===== */
+
+.summary{
+
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+    margin-bottom:35px;
+
+}
+
+.summary-card{
+
+    width:250px;
+    background:white;
+    border-radius:18px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 6px 18px rgba(0,0,0,.12);
+
+}
+
+.summary-card h3{
+
+    color:#666;
+    margin-bottom:15px;
+
+}
+
+.summary-card h2{
+
+    margin:0;
+    font-size:30px;
+
+}
+
+/* ===== Progress ===== */
+
+.progress-section{
+
+    background:white;
+    border-radius:18px;
+    padding:30px;
+    text-align:center;
+    box-shadow:0 6px 18px rgba(0,0,0,.12);
+
+}
+
+.progress-bar{
+
+    width:100%;
+    height:24px;
+    background:#e0e0e0;
+    border-radius:25px;
+    overflow:hidden;
+    margin-top:20px;
+    margin-bottom:20px;
+
+}
+
+.progress-fill{
+
+    height:100%;
+    border-radius:25px;
+    transition:width .8s ease-in-out;
+
+}
+
+.progress-section p{
+
+    font-size:18px;
+
+}
+
+/* ===== Warning ===== */
+
+.warning{
+
+    color:#F44336;
+    margin-top:20px;
+
+}
+
+/* ===== Responsive ===== */
+
+@media(max-width:768px){
+
+    .summary{
+
+        flex-direction:column;
+        align-items:center;
+
+    }
+
+    .summary-card{
+
+        width:100%;
+
+    }
+
+    .budget-input-row{
+
+        flex-direction:column;
+
+    }
+
+    .budget-input-row input{
+
+        width:100%;
+
+    }
+
+}

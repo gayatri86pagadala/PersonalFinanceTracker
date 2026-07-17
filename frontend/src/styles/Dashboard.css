@@ -1,0 +1,320 @@
+.dashboard {
+    padding: 40px;
+    background: #f4f6f9;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.dashboard h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 35px;
+    font-size: 34px;
+}
+
+/* ================= Cards ================= */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.card {
+    padding: 25px;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,.15);
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+.balance {
+    background: linear-gradient(135deg,#3949ab,#5c6bc0);
+}
+
+.income {
+    background: linear-gradient(135deg,#2e7d32,#4caf50);
+}
+
+.expense {
+    background: linear-gradient(135deg,#d32f2f,#ef5350);
+}
+
+.transactions {
+    background: linear-gradient(135deg,#6a1b9a,#ab47bc);
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.card h2 {
+    margin-top: 18px;
+    font-size: 30px;
+}
+
+/* ================= Charts ================= */
+
+.chart-section {
+
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.12);
+    margin-bottom: 40px;
+
+}
+
+.chart-section h2 {
+
+    margin-bottom: 25px;
+    color: #2c3e50;
+    text-align: center;
+
+}
+
+/* ================= Recent Transactions ================= */
+
+.recent-section {
+
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.12);
+    margin-bottom: 40px;
+    overflow-x: auto;
+
+}
+
+.recent-section h2 {
+
+    margin-bottom: 20px;
+    color: #2c3e50;
+
+}
+
+.recent-section table {
+
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 700px;
+
+}
+
+.recent-section th {
+
+    background: #1976d2;
+    color: white;
+    padding: 15px;
+
+}
+
+.recent-section td {
+
+    padding: 14px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+
+}
+
+.recent-section tr:hover {
+
+    background: #f5f5f5;
+
+}
+
+/* ================= Quick Statistics ================= */
+
+.stats-section {
+
+    margin-top: 20px;
+
+}
+
+.stats-section h2 {
+
+    margin-bottom: 20px;
+    color: #2c3e50;
+    text-align: center;
+
+}
+
+.stats-grid {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    gap: 20px;
+
+}
+
+.stat-card {
+
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.12);
+    text-align: center;
+    transition: .3s;
+
+}
+
+.stat-card:hover {
+
+    transform: translateY(-5px);
+
+}
+
+.stat-card h4 {
+
+    color: #666;
+    margin-bottom: 15px;
+
+}
+
+.stat-card h2 {
+
+    color: #1976d2;
+    font-size: 28px;
+
+}
+
+/* ================= Scrollbar ================= */
+
+.recent-section::-webkit-scrollbar {
+
+    height: 8px;
+
+}
+
+.recent-section::-webkit-scrollbar-thumb {
+
+    background: #1976d2;
+    border-radius: 10px;
+
+}
+
+/* ================= Responsive ================= */
+
+@media (max-width:1024px) {
+
+    .dashboard {
+
+        padding: 30px;
+
+    }
+
+    .cards,
+    .stats-grid {
+
+        grid-template-columns: repeat(2,1fr);
+
+    }
+
+}
+
+@media (max-width:768px) {
+
+    .dashboard {
+
+        padding: 20px;
+
+    }
+
+    .dashboard h1 {
+
+        font-size: 28px;
+
+    }
+
+    .cards,
+    .stats-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .card {
+
+        padding: 20px;
+
+    }
+
+    .card h2 {
+
+        font-size: 24px;
+
+    }
+
+    .chart-section,
+    .recent-section,
+    .stat-card {
+
+        padding: 20px;
+
+    }
+
+    .chart-section h2,
+    .recent-section h2,
+    .stats-section h2 {
+
+        font-size: 22px;
+
+    }
+
+}
+
+@media (max-width:480px) {
+
+    .dashboard {
+
+        padding: 15px;
+
+    }
+
+    .dashboard h1 {
+
+        font-size: 22px;
+
+    }
+
+    .card h3 {
+
+        font-size: 16px;
+
+    }
+
+    .card h2 {
+
+        font-size: 22px;
+
+    }
+
+    .stat-card h2 {
+
+        font-size: 22px;
+
+    }
+
+    .stat-card h4 {
+
+        font-size: 14px;
+
+    }
+
+    .chart-section,
+    .recent-section,
+    .stat-card {
+
+        padding: 15px;
+
+    }
+
+}

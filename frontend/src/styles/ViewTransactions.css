@@ -1,0 +1,295 @@
+.transaction-page {
+
+    padding: 40px;
+    background: #f4f6f9;
+    min-height: 100vh;
+    box-sizing: border-box;
+
+}
+
+.transaction-page h1 {
+
+    text-align: center;
+    margin-bottom: 30px;
+    color: #1976d2;
+    font-size: 34px;
+
+}
+
+/* ================= Toolbar ================= */
+
+.toolbar {
+
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.toolbar input {
+
+    flex: 1;
+    min-width: 250px;
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    outline: none;
+    transition: .3s;
+
+}
+
+.toolbar input:focus {
+
+    border-color: #1976d2;
+    box-shadow: 0 0 6px rgba(25,118,210,.3);
+
+}
+
+.toolbar select {
+
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    min-width: 170px;
+    outline: none;
+    transition: .3s;
+
+}
+
+.toolbar select:focus {
+
+    border-color: #1976d2;
+    box-shadow: 0 0 6px rgba(25,118,210,.3);
+
+}
+
+/* ================= Table ================= */
+
+table {
+
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,.12);
+
+}
+
+thead {
+
+    position: sticky;
+    top: 0;
+    z-index: 1;
+
+}
+
+th {
+
+    background: #1976d2;
+    color: white;
+    padding: 16px;
+    font-size: 15px;
+
+}
+
+td {
+
+    text-align: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+
+}
+
+tbody tr:nth-child(even) {
+
+    background: #fafafa;
+
+}
+
+tbody tr:hover {
+
+    background: #eef6ff;
+    transition: .3s;
+
+}
+
+/* ================= Type Badges ================= */
+
+.income-badge {
+
+    background: #4CAF50;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+
+}
+
+.expense-badge {
+
+    background: #F44336;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+
+}
+
+/* ================= Action Icons ================= */
+
+.action-icon {
+
+    cursor: pointer;
+    font-size: 20px;
+    transition: .3s;
+
+}
+
+.edit-icon {
+
+    color: #1976d2;
+
+}
+
+.edit-icon:hover {
+
+    color: #0d47a1;
+    transform: scale(1.2);
+
+}
+
+.delete-icon {
+
+    color: #e53935;
+
+}
+
+.delete-icon:hover {
+
+    color: #b71c1c;
+    transform: scale(1.2);
+
+}
+
+.separator {
+
+    margin: 0 12px;
+    color: #bbb;
+
+}
+
+/* ================= Empty Table ================= */
+
+.no-data {
+
+    text-align: center;
+    padding: 30px;
+    color: gray;
+    font-size: 18px;
+
+}
+
+/* ================= Scrollbar ================= */
+
+.table-container {
+
+    overflow-x: auto;
+
+}
+
+.table-container::-webkit-scrollbar {
+
+    height: 8px;
+
+}
+
+.table-container::-webkit-scrollbar-thumb {
+
+    background: #1976d2;
+    border-radius: 10px;
+
+}
+
+/* ================= Responsive ================= */
+
+@media (max-width: 1024px) {
+
+    .transaction-page {
+
+        padding: 30px;
+
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .transaction-page {
+
+        padding: 20px;
+
+    }
+
+    .transaction-page h1 {
+
+        font-size: 28px;
+
+    }
+
+    .toolbar {
+
+        flex-direction: column;
+
+    }
+
+    .toolbar input,
+    .toolbar select {
+
+        width: 100%;
+        min-width: 100%;
+
+    }
+
+    table {
+
+        min-width: 850px;
+
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .transaction-page {
+
+        padding: 15px;
+
+    }
+
+    .transaction-page h1 {
+
+        font-size: 22px;
+
+    }
+
+    th,
+    td {
+
+        padding: 12px;
+        font-size: 14px;
+
+    }
+
+    .action-icon {
+
+        font-size: 18px;
+
+    }
+
+}
