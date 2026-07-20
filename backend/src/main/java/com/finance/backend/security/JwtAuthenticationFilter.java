@@ -4,6 +4,7 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -21,6 +22,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     @Autowired
     private JwtService jwtService;
 
+
     @Override
     protected void doFilterInternal(
             HttpServletRequest request,
@@ -28,7 +30,21 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             FilterChain filterChain)
             throws ServletException, IOException {
 
+
+        String path = request.getServletPath();
+
+
+        // Skip JWT checking for public endpoints
+        if (path.equals("/api/users/login") ||
+                path.equals("/api/users/register")) {
+
+            filterChain.doFilter(request, response);
+            return;
+        }
+
+
         String header = request.getHeader("Authorization");
+
 
         if (header != null && header.startsWith("Bearer ")) {
 
@@ -38,6 +54,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
                 String email = jwtService.extractEmail(token);
 
+
                 UsernamePasswordAuthenticationToken authentication =
                         new UsernamePasswordAuthenticationToken(
                                 email,
@@ -45,19 +62,26 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                                 List.of(new SimpleGrantedAuthority("USER"))
                         );
 
+
                 authentication.setDetails(
                         new WebAuthenticationDetailsSource()
-                                .buildDetails(request));
+                                .buildDetails(request)
+                );
+
 
                 SecurityContextHolder
                         .getContext()
                         .setAuthentication(authentication);
 
+
             } catch (Exception e) {
-                e.printStackTrace();
+
+                System.out.println("Invalid JWT token");
+
             }
 
         }
+
 
         filterChain.doFilter(request, response);
 
