@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: "http://localhost:8080/api",
+    baseURL: "https://personalfinancetracker-production-e905.up.railway.app/api",
 });
 
 // Automatically add JWT token to every request
