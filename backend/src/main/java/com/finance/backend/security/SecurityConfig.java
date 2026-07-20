@@ -29,7 +29,9 @@ public class SecurityConfig {
 
                 .authorizeHttpRequests(auth -> auth
 
+                        // Public endpoints
                         .requestMatchers(
+                                "/",
                                 "/api/users/register",
                                 "/api/users/login",
                                 "/api/transactions/pdf",
@@ -37,8 +39,10 @@ public class SecurityConfig {
                                 "/api/transactions/monthly-report"
                         ).permitAll()
 
+                        // Allow frontend preflight requests
                         .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
 
+                        // All other APIs require JWT
                         .anyRequest().authenticated()
                 )
 
@@ -47,8 +51,8 @@ public class SecurityConfig {
                         UsernamePasswordAuthenticationFilter.class
                 )
 
+                // Disable default login screens
                 .httpBasic(httpBasic -> httpBasic.disable())
-
                 .formLogin(form -> form.disable());
 
         return http.build();
